@@ -3,13 +3,22 @@
 }
 
 body {
-	background-color: #216D6A;
+	background: linear-gradient(to  right, #333, #216D6A);
 	color: #ddd;
+	width: 100%
+}
+
+section.top {
+	width: 100%;
+	background-color: #2ECCA4;
+	height: 100px;
+	box-shadow: 2px 0px 10px #eee;
 }
 
 .title {
 	font-size: 50px;
 	text-align: center;
+	line-height: 60px;
 }
 
 .author {
@@ -17,16 +26,29 @@ body {
 	text-align: center;
 }
 
+.container {
+	padding: 50px;
+	position: relative;
+	top: 30px;
+	height: auto;
+	margin: auto;
+	max-width: 1300px;
+}
+
+.container section:not(.alert) {
+	margin: auto;
+}
+
 .alert {
 	background-color: #CBEA2E;
+	display: inline-block;
 	max-width: 600px;
 	color: #585D3E;
-	margin-top: 100px;
-	margin-left: 10%;
 	border-radius: 20px;
 	padding: 20px;
 	box-shadow: 8px 5px 10px 5px #333;
 	border: 3px solid #333;
+	/*float: left;*/
 }
 
 .alert h3, .minreq h3, .panduan h3 {
@@ -42,16 +64,25 @@ body {
 }
 
 .minreq {
-	float: right;
+	float: left;
 	background-color: white;
 	max-width: 600px;
 	color: #585D3E;
-	margin-top: 50px;
 	border-radius: 20px;
-	padding: 20px;
-	margin-right: 10%;
+	padding: 30px;
 	box-shadow: 8px 5px 10px 5px #333;
 	border: 3px solid #333;
+	transform: translate(40px, 30px);
+}
+
+.minreq ul li {
+	list-style-type: square;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .minreq li {
@@ -59,18 +90,49 @@ body {
 }
 
 .panduan {
+	float: right;
 	background-color: skyblue;
 	max-width: 600px;
-	color: #585D3E;
-	margin-top: 50px;
 	border-radius: 20px;
-	padding: 20px;
-	margin-left: 10%;
+	padding: 30px;
 	box-shadow: 8px 5px 10px 5px #333;
 	border: 3px solid #333;
+	transform: translateY(20px);
 }
 
-.panduan h3 {
+.panduan ul li ul {
+	list-style-type: circle;
+	list-style-position: inside;
+	text-indent: 20px;
+}
 
+.panduan ul li ul a {
+	color: green;
+}
+
+.panduan li a {
+	text-decoration: none;
+}
+
+.panduan li a:hover {
+	text-decoration: underline;
+}
+
+.lns{
+	list-style-type: none;
+	color: #222;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+	background-color: black;
+	height: 60px;
+}
+
+.content {
+	line-height: 60px;
 }
 
