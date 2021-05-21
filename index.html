@@ -7,50 +7,65 @@
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="reset.css">
 	</head>
-	<body>
-		<h1 class="title">Petunjuk Instalasi Pterodactyl Panel</h1>
-		<p class="author">Author ipincamp</p>
-		<section class="alert">
-			<h3>Perhatian!</h3>
-			<p>Tutorial yang saya berikan adalah versi ipincamp.<br>Credit dan support silahkan menuju official website Pterodactyl <a href="https://pterodactyl.io/" target="_blank">disini</a>.<br>Namun jika Anda merasakan manfaat dari tutorial yang saya buat,Anda bisa support saya untuk tutorial - tutorial lainnya <a href="./src/sup.html">disini</a>.</p>
+	<body oncontextmenu="return false;">
+		<section class="top">
+			<h1 class="title">Petunjuk Instalasi Pterodactyl Panel</h1>
+			<p class="author">Author ipincamp</p>
 		</section>
-		<section class="minreq">
-			<h3>Syarat Minimal</h3>
-			<ul>
-				<li>Ubuntu 20.04. (bisa juga memakai Ubuntu 18.04).</li>
-				<li>1vCPU atau lebih.</li>
-				<li>2 GB RAM atau lebih.</li>
-				<li>20 GB DISK atau lebih.</li>
-				<li>Koneksi Internet (yang kenceng :D)</li>
-			</ul>
-		</section>
-		<section class="panduan">
-		<h3>Daftar Panduan</h3>
-		<li><a href="">Home</a></li>
-		<li><a href="./src/dep.html">Dependensasi</a>
-		<ul type="circle">
-			<li><a href="./src/dep.html">Instalasi PHP</a></li>
-			<li><a href="./src/dep.html">Instalasi MariaDB (MySQL)</a></li>
-			<li><a href="./src/dep.html">Instalasi Redis</a></li>
-			<li><a href="./src/dep.html">Instalasi Nginx</a></li>
-			<li><a href="./src/dep.html">Instalasi Pendukung</a></li>
-		</ul>
-	</li>
-	<li><a href="./src/dof.html">Download Files</a></li>
-	<li>
-		<a href="./src/ins.html">Instalasi dan Konfigurasi</a>
-		<ul type="circle">
-			<li><a href="./src/ins.html">Konfigurasi Environment</a></li>
-			<li><a href="./src/ins.html">Konfigurasi Database</a></li>
-			<li><a href="./src/ins.html">Konfigurasi Pengguna/User</a></li>
-		</ul>
-	</li>
-	<li>
-		<a href="./src/que.html">Pendengar Antrian</a>
-		<ul type="circle">
-			<li><a href="./src/que.html">Konfigurasi Crontab</a></li>
-			<li><a href="./src/que.html">Buat Queue Worker</a></li>
-		</ul>
-	</li>
-	</section>
-	<footer>&copy; <a href="https://github.com/ariflitejek/">ariflitejek</a>. All rights reserved.</footer>
+		<div class="container">
+			<section class="alert">
+				<h3>Perhatian!</h3>
+				<p>Tutorial yang saya berikan adalah versi ipincamp.<br>Credit dan support silahkan menuju official website Pterodactyl <a href="https://pterodactyl.io/" target="_blank">disini</a>.<br>Namun jika Anda merasakan manfaat dari tutorial yang saya buat,Anda bisa support saya untuk tutorial - tutorial lainnya <a href="./src/sup.html">disini</a>.</p>
+			</section>
+			<section class="panduan">
+				<h3>Daftar Panduan</h3>
+				<ul>
+					<li><a href="">Home</a></li>
+					<li>&nbsp;</li>
+					<li class="lns"><p>Dependensasi</p></li>
+					<li>
+						<ul>
+							<li><a href="./src/dep.html">Instalasi PHP</a></li>
+							<li><a href="./src/dep.html">Instalasi MariaDB (MySQL)</a></li>
+							<li><a href="./src/dep.html">Instalasi Redis</a></li>
+							<li><a href="./src/dep.html">Instalasi Nginx</a></li>
+							<li><a href="./src/dep.html">Instalasi Pendukung</a></li>
+						</ul>
+					</li>
+					<li>&nbsp;</li>
+					<li><a href="./src/dof.html">Download Files</a></li>
+					<li>&nbsp;</li>
+					<li class="lns"><p>Instalasi dan Konfigurasi</p></li>
+					<li>
+						<ul>
+							<li><a href="./src/ins.html">Konfigurasi Environment</a></li>
+							<li><a href="./src/ins.html">Konfigurasi Database</a></li>
+							<li><a href="./src/ins.html">Konfigurasi Pengguna/User</a></li>
+						</ul>
+					</li>
+					<li>&nbsp;</li>
+					<li class="lns"><p>Pendengar Antrian</p></li>
+					<li>
+						<ul>
+							<li><a href="./src/que.html">Konfigurasi Crontab</a></li>
+							<li><a href="./src/que.html">Buat Queue Worker</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="minreq">
+				<h3>Syarat Minimal</h3>
+				<ul>
+					<li>Ubuntu 20.04. (bisa juga memakai Ubuntu 18.04).</li>
+					<li>1vCPU atau lebih.</li>
+					<li>2 GB RAM atau lebih.</li>
+					<li>20 GB DISK atau lebih.</li>
+					<li>Koneksi Internet (yang kenceng :D)</li>
+				</ul>
+			</section>
+		</div>
+		<footer><div class="content">&copy; <a href="https://github.com/ariflitejek/">ariflitejek</a>. All rights reserved.</div></footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>
