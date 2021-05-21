@@ -11,8 +11,10 @@ body {
 section.top {
 	width: 100%;
 	background-color: #2ECCA4;
-	height: 100px;
+	min-height: 100px;
 	box-shadow: 2px 0px 10px #eee;
+	padding: 20px;
+	text-shadow: 2px 2px #666;
 }
 
 .title {
@@ -56,6 +58,7 @@ section.top {
 	color: #9A1955;
 	margin-bottom: 10px;
 	text-align: center;
+	text-shadow: 2px 1px #666;
 }
 
 .alert p {
@@ -124,8 +127,8 @@ section.top {
 }
 
 footer {
-	position: fixed;
-	bottom: 0;
+	position: relative;
+	bottom: -80px;
 	text-align: center;
 	width: 100%;
 	background-color: black;
