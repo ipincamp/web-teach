@@ -1,0 +1,76 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #216D6A;
+	color: #ddd;
+}
+
+.title {
+	font-size: 50px;
+	text-align: center;
+}
+
+.author {
+	font-size: 20px;
+	text-align: center;
+}
+
+.alert {
+	background-color: #CBEA2E;
+	max-width: 600px;
+	color: #585D3E;
+	margin-top: 100px;
+	margin-left: 10%;
+	border-radius: 20px;
+	padding: 20px;
+	box-shadow: 8px 5px 10px 5px #333;
+	border: 3px solid #333;
+}
+
+.alert h3, .minreq h3, .panduan h3 {
+	font-size: 35px;
+	color: #9A1955;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.alert p {
+	text-indent: 20px;
+	text-align: center;
+}
+
+.minreq {
+	float: right;
+	background-color: white;
+	max-width: 600px;
+	color: #585D3E;
+	margin-top: 50px;
+	border-radius: 20px;
+	padding: 20px;
+	margin-right: 10%;
+	box-shadow: 8px 5px 10px 5px #333;
+	border: 3px solid #333;
+}
+
+.minreq li {
+	list-style-type: circle;
+}
+
+.panduan {
+	background-color: skyblue;
+	max-width: 600px;
+	color: #585D3E;
+	margin-top: 50px;
+	border-radius: 20px;
+	padding: 20px;
+	margin-left: 10%;
+	box-shadow: 8px 5px 10px 5px #333;
+	border: 3px solid #333;
+}
+
+.panduan h3 {
+
+}
+
