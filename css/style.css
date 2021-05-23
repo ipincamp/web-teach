@@ -76,7 +76,9 @@ section.top {
 	padding: 30px;
 	box-shadow: 8px 5px 10px 5px #333;
 	border: 3px solid #333;
-	transform: translate(40px, 30px);
+	position: relative;
+	top: 40px;
+	bottom: 30px;
 }
 
 .minreq ul li {
