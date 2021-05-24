@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WEB TEACH | Dependensasi</title>
+</head>
+<body>
+	<h1>Instalasi Dependensasi</h1><br><br>
+	<strong>Pastikan Anda menggunakan user dengan akses root!</strong><br><br><br><hr>
+	<h3>Cara Cepat</h3><hr>
+	<p>
+		<i># Pastikan semua apt sudah update.</i><br>
+		<b>$</b> sudo apt update && sudo apt upgrade -y<br><br>
+
+		<i># Tambahkan repository pendukung.</i><br>
+		<b>$</b> sudo apt install software-properties-common curl apt-transport-https ca-certificates gnupg -y<br><br>
+
+		<i># Ini repository php.</i><br>
+		<b>$</b> sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y<br><br>
+
+		<i># Ini repository redis.</i><br>
+		<b>$</b> sudo add-apt-repository ppa:chris-lea/redis-server -y<br><br>
+
+		<i># Download script instalasi MariaDB dengan bash.</i><br>
+		<b>$</b> curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash -y<br><br>
+
+		<i># Instal semua dependensasi</i><br>
+		<b>$</b> sudo apt install php8.0 php8.0-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} mariadb-server nginx tar unzip git redis-server -y<br><br>
+
+		<i># Pastikan sudah update semua apt/software.</i><br>
+		<b>$</b> sudo apt update && sudo apt upgrade -y
+	</p><br><br>
+	<p>
+		<ul>
+			<dl>
+				<b>Note!</b><br>
+				<i>Cara diatas adalah versi website guide Pterodactyl.<br>Jika Anda kurang yakin dengan cara diatas,<br>silahkan untuk mengikuti Cara Lengkap dibawah ini.</i>
+			</dl>
+		</ul>
+	</p><br><br><hr>
+
+	<h3>Cara Lengkap</h3><hr><br>
+	<li type="disc"><b>Update semua paket.</b>
+		<ul>
+			<b>$</b> sudo apt update && sudo apt upgrade -y
+		</ul>
+	</li>
+	<li type="disc"><b>Instal PHP (<i>v8.0</i>)</b>
+		<ul>
+			<i># Tambah repository agar selalu update</i><br>
+			<b>$</b> sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y<br><br>
+			<i># Cek dengan update paket</i><br>
+			<b>$</b> sudo apt update -y <br><br>
+			<i># Instal dan beberapa dependensasi untuk Nginx</i><br>
+			<b>$</b> sudo apt install php8.0 php8.0-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} -y<br><br>
+			<i># Cek apakah sudah terinstal dengan benar.</i><br>
+			<b>$</b> php -v
+		</ul>
+	</li>
+	<li type="disc"><b>Instal Nginx</b>
+		<ul>
+			<i># Instal langsung aja gaskeun!</i><br>
+			<b>$</b> sudo apt install nginx -y<br><br>
+			<i># Buka Firewall agar website dapat diakses (saya pakai ufw)</i><br>
+			<b>$</b> sudo ufw app list<br><br>
+			<i># Jika Anda ingin menggunakan Domain & TLS/SSL maka pilih yang "Nginx Full". Namun jika hanya ingin menggunakan lalu lintas web normal maka pilih yang "Nginx HTTP"<br><br># Buka Firewall dengan Domain & TLS/SSL.</i><br>
+			<b>$</b> sudo ufw allow 'Nginx Full'<br>
+			<i># Buka Firewall lalu lintas normal</i><br>
+			<b>$</b> sudo ufw allow 'Nginx HTTP'<br><br><b>* Pilih salah satu saja, setelah itu update ufw.</b><br><br>
+			<i># Pastikan port untuk ssh tidak tertutup (Default 22).</i><br>
+			<b>$</b> sudo ufw allow ssh<br>
+			<i># Opsional.</i><br>
+			<b>$</b> sudo ufw allow 22/tcp<br><br>
+			<i># Aktifkan ufw.</i><br>
+			<b>$</b> sudo ufw enable<br><br>
+			<i># Cara melihat list rule ufw di Ubuntu.</i><br>
+			<b>$</b> sudo ufw status numbered<br><br>
+			<i># Cek apakah Nginx sudah berjalan dengan benar.</i><br>
+			<b>$</b> sudo systemctl status nginx<br><br>
+			<i># Cek di browser.</i><br>
+			http://<b>ip_server_anda</b>
+		</ul>
+	</li>
+	<li type="disc"><b>Instal Redis</b>
+		<ul>
+			<i># Tambahkan repository agar selalu update.</i><br>
+			<b>$</b> sudo add-apt-repository ppa:chris-lea/redis-server -y<br><br>
+			<i># Cek dengan update paket</i><br>
+			<b>$</b> sudo apt update -y <br><br>
+			<i># Instal Redis Server</i><br>
+			<b>$</b> sudo apt install redis-server -y<br><br>
+
+			<b>* Konfigurasi Redis Server</b><br>
+			<i># Gunakan nano sebagai editor di Ubuntu.</i><br>
+			<b>$</b> sudo nano /etc/redis/redis.conf<br><br>
+			<i># Lalu cari kata <b>"requirepass"</b> dengan ‎Shortcut <b>"CTRL + W"</b> lalu ketik <b>"requirepass"</b> dan hit Enter.<br>Hapus tanda <b>"#"</b> dan akan menjadi seperti ini</i><br>
+			<b>requirepass (password_redis_anda)</b><br><br>
+			<i># Contoh</i><br>
+			<b>requirepass cfromd312</b><br><br>
+			<i># Setelah itu, save dengan Shortcut <b>"CTRL + X"</b> lalu klik <b>"Y"</b> dan <b>"Enter"</b><br><br><b>* Validasi Redis Server</b></i><br>
+			<b>$</b> sudo redis-cli<br>
+			<ul>
+				<b>$</b> CONFIG SET requirepass 'password_redis_anda'<br>
+				<b>$</b> AUTH password_redis_anda<br>
+				<b>$</b> exit<br><br>
+			</ul>
+			<i># Cek apakah sudah bekerja dengan normal.</i><br>
+			<b>$</b> sudo systemctl status redis<br>
+		</ul>
+	</li>
+	<li type="disc"><b>Instal MariaDB (MySQL)</b>
+		<ul>
+			<i># Langsung instal MariaDB</i><br>
+			<b>$</b> sudo apt install mariadb-server -y<br><br>
+			<i># Konfigurasi MariaDB</i><br>
+			<b>$</b> sudo mysql_secure_installation<br>
+			<ul>
+				<b>Enter current password for root (enter for none):</b> <i>Tekan <b>"Enter"</b> untuk skip</i><br>
+				<b>Remove anonymous users?</b> <i>Tekan <b>"Y"</b></i><br>
+				<b>Disallow root login remotely?</b> <i>Tekan <b>"Y"</b></i><br>
+				<b>Remove test database and access to it?</b> <i>Tekan <b>"Y"</b></i><br>
+				<b>Reload privilege tables now?</b> <i>Tekan <b>"Y"</b></i><br><br>
+			</ul>
+			<i># Cek apakah sudah bekerja dengan normal.</i><br>
+			<b>$</b> sudo systemctl status mariadb<br>
+		</ul>
+	</li><br>
+	<li type="disc"><b>Instal Dependensasi Lainnya</b>
+		<ul>
+			<i># Langsung install saja</i><br>
+			<b>$</b> sudo apt install tar unzip git -y<br><br>
+			<i># Cek dengan update paket</i><br>
+			<b>$</b> sudo apt update && sudo apt upgrade -y <br><br>
+		</ul>
+	</li>
+	<br><br><br><br><br><hr>
+	<h3>Daftar Panduan</h3><hr><br>
+	<li type="square"><a href="../index.html">Home</a></li>
+	<li type="square">
+		<a href="">Dependensasi</a>
+		<ul type="circle">
+			<li><a href="./src/dep.html">Instalasi PHP</a></li>
+			<li><a href="./src/dep.html">Instalasi MariaDB (MySQL)</a></li>
+			<li><a href="./src/dep.html">Instalasi Redis</a></li>
+			<li><a href="./src/dep.html">Instalasi Nginx</a></li>
+			<li><a href="./src/dep.html">Instalasi Pendukung</a></li>
+		</ul>
+	</li>
+	<li type="square"><a href="./src/dof.html">Download Files</a></li>
+	<li type="square">
+		<a href="./src/ins.html">Instalasi dan Konfigurasi</a>
+		<ul type="circle">
+			<li><a href="./src/ins.html">Konfigurasi Environment</a></li>
+			<li><a href="./src/ins.html">Konfigurasi Database</a></li>
+			<li><a href="./src/ins.html">Konfigurasi Pengguna/User</a></li>
+		</ul>
+	</li>
+	<li type="square">
+		<a href="./src/que.html">Pendengar Antrian</a>
+		<ul type="circle">
+			<li><a href="./src/que.html">Konfigurasi Crontab</a></li>
+			<li><a href="./src/que.html">Buat Queue Worker</a></li>
+		</ul>
+	</li><br><br><br><br><br><br><br><br><br><br>
+	<footer>&copy; <a href="https://github.com/ariflitejek/">ariflitejek</a>. All rights reserved.</footer>
+</body>
+</html>
