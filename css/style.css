@@ -1,144 +1,48 @@
-* {
-	box-sizing: border-box;
-	user-select: none;
+*
+{
+    margin: 0;
+    padding: 0;
+
+}
+#particles-js{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('gatau.png');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
 }
 
-body {
-	background: linear-gradient(to  right, #333, #216D6A);
-	color: #ddd;
-	width: 100%
+.logo{
+    margin-top: 25px;
+    font-size: 28px;
+    text-transform: uppercase;
 }
 
-section.top {
-	width: 100%;
-	background-color: #2ECCA4;
-	min-height: 100px;
-	box-shadow: 2px 0px 10px #eee;
-	padding: 20px;
-	text-shadow: 2px 2px #666;
+.samlekom {
+    margin-left: 5%;
+    position: absolute;
+    color: #fff;
+    font-family: sans-serif;
 }
 
-.title {
-	font-size: 50px;
-	text-align: center;
-	line-height: 60px;
+.samlekom h1 {
+    margin-top: 220px;
+    letter-spacing: 2px;
+    font-size: 42px;
+    text-transform: uppercase;
 }
 
-.author {
-	font-size: 20px;
-	text-align: center;
+.samlekom p {
+font-size: 16px;
+    margin-top: 25px;
+    font-family: monospace;
 }
 
-.container {
-	padding: 50px;
-	position: relative;
-	top: 30px;
-	height: auto;
-	margin: auto;
-	max-width: 1300px;
+.samlekom a {
+    background-color: aqua;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 2px;
+    position: fixed;
+    margin-top: 30px;
+    padding: 15px 30px;
 }
-
-.container section:not(.alert) {
-	margin: auto;
-}
-
-.alert {
-	background-color: #CBEA2E;
-	display: inline-block;
-	max-width: 600px;
-	color: #585D3E;
-	border-radius: 20px;
-	padding: 20px;
-	box-shadow: 8px 5px 10px 5px #333;
-	border: 3px solid #333;
-	/*float: left;*/
-}
-
-.alert h3, .minreq h3, .panduan h3 {
-	font-size: 35px;
-	color: #9A1955;
-	margin-bottom: 10px;
-	text-align: center;
-	text-shadow: 2px 1px #666;
-}
-
-.alert p {
-	text-indent: 20px;
-	text-align: center;
-}
-
-.minreq {
-	float: left;
-	background-color: white;
-	max-width: 600px;
-	color: #585D3E;
-	border-radius: 20px;
-	padding: 30px;
-	box-shadow: 8px 5px 10px 5px #333;
-	border: 3px solid #333;
-	position: relative;
-	top: 40px;
-	bottom: 30px;
-}
-
-.minreq ul li {
-	list-style-type: square;
-}
-
-.container::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.minreq li {
-	list-style-type: circle;
-}
-
-.panduan {
-	float: right;
-	background-color: skyblue;
-	max-width: 600px;
-	border-radius: 20px;
-	padding: 30px;
-	box-shadow: 8px 5px 10px 5px #333;
-	border: 3px solid #333;
-	transform: translateY(20px);
-}
-
-.panduan ul li ul {
-	list-style-type: circle;
-	list-style-position: inside;
-	text-indent: 20px;
-}
-
-.panduan ul li ul a {
-	color: green;
-}
-
-.panduan li a {
-	text-decoration: none;
-}
-
-.panduan li a:hover {
-	text-decoration: underline;
-}
-
-.lns{
-	list-style-type: none;
-	color: #222;
-}
-
-footer {
-	position: relative;
-	bottom: -80px;
-	text-align: center;
-	width: 100%;
-	background-color: black;
-	height: 60px;
-}
-
-.content {
-	line-height: 60px;
-}
-
